@@ -18,9 +18,23 @@ class Snake {
   }
   //   设置蛇头的坐标
   set X(val: number) {
+    // 如果新值和旧值相同,则直接返回不再修改
+    if (this.X === val) {
+      return
+    }
+
+    if (val < 0 || val > 380) {
+      throw new Error('蛇撞墙了')
+    }
     this.head.style.left = val + 'px'
   }
   set Y(val: number) {
+    if (this.Y === val) {
+      return
+    }
+    if (val < 0 || val > 380) {
+      throw new Error('蛇撞墙了')
+    }
     this.head.style.top = val + 'px'
   }
 

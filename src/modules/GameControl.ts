@@ -6,7 +6,7 @@ class GameControl {
   food: Food
   scorePanel: ScorePanel
 
-  //   创建一个属性来存储蛇的移动方向
+  // 创建一个属性来存储蛇的移动方向
   direction: string = ''
   // 活着与死亡
   isLive = true
@@ -20,7 +20,6 @@ class GameControl {
   //   游戏初始化,调用后立即开始
   init() {
     document.addEventListener('keydown', this.keydownHandler.bind(this))
-
     this.move()
   }
   /* 
@@ -59,12 +58,31 @@ class GameControl {
         X += 20
         break
     }
-    this.snake.X = X
-    this.snake.Y = Y
+
+    this.checkEat(X, Y)
+    try {
+      this.snake.X = X
+      this.snake.Y = Y
+    } catch (e) {
+      alert(e.message)
+      this.isLive = false
+    }
 
     //开启定时调用
     this.isLive &&
       setTimeout(this.move.bind(this), 300 - (this.scorePanel.level - 1) * 30)
+  }
+
+  //检查蛇是否吃到食物
+  checkEat(X: number, Y: number) {
+    if (X === this.food.X && Y === this.food.Y) {
+      //重置食物位置
+      this.food.change()
+      //加分
+      this.scorePanel.addScore()
+      //   身体变长
+      this.snake.addBody()
+    }
   }
 }
 
