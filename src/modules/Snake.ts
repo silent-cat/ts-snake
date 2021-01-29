@@ -17,10 +17,10 @@ class Snake {
     return this.head.offsetTop
   }
   //   设置蛇头的坐标
-  setX(val: number) {
+  set X(val: number) {
     this.head.style.left = val + 'px'
   }
-  setY(val: number) {
+  set Y(val: number) {
     this.head.style.top = val + 'px'
   }
 
