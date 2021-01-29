@@ -15,11 +15,11 @@
   align-items: center;
 
   > .stage {
-    width: 400px;
-    height: 420px;
+    width: 402px;
+    height: 402px;
     border: 1px solid #fff;
     position: relative;
-    > .snake {
+    > #snake {
       > div {
         position: absolute;
         width: 20px;
@@ -28,13 +28,16 @@
         border: 5px solid #000;
       }
     }
-    > .food {
+    > #food {
       position: absolute;
       left: 100px;
+      height: 100px;
+      left: 100px;
       top: 100px;
-      width: 10px;
-      height: 10px;
+      width: 20px;
+      height: 20px;
       background-color: #fff;
+      border: 5px solid #000;
     }
   }
   > .score-panel {
