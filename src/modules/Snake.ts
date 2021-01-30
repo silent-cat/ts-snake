@@ -22,7 +22,8 @@ class Snake {
     if (this.X === val) {
       return
     }
-
+    //移动身体
+    this.moveBody()
     if (val < 0 || val > 380) {
       throw new Error('蛇撞墙了')
     }
@@ -32,6 +33,7 @@ class Snake {
     if (this.Y === val) {
       return
     }
+    this.moveBody()
     if (val < 0 || val > 380) {
       throw new Error('蛇撞墙了')
     }
@@ -41,6 +43,20 @@ class Snake {
   //   增加身体
   addBody() {
     this.snake.insertAdjacentHTML('beforeend', '<div></div>')
+  }
+
+  //移动身体
+  moveBody() {
+    // 将后边的身体设置为前边身体的位置
+    for (let i = this.bodies.length - 1; i > 0; i--) {
+      // 获取前边身体的位置
+      let X = (this.bodies[i - 1] as HTMLElement).offsetLeft
+      let Y = (this.bodies[i - 1] as HTMLElement).offsetTop
+
+      // 键值设置到当前身体上
+      ;(this.bodies[i] as HTMLElement).style.left = X + 'px'
+      ;(this.bodies[i] as HTMLElement).style.top = Y + 'px'
+    }
   }
 }
 
