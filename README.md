@@ -14,18 +14,22 @@
 
 ```
 ts-snake
+├── dist
+│   ├── bundle.js
+│   └── index.html
 ├── package-lock.json
 ├── package.json
-├── src
-│ ├── index.html
-│ ├── index.scss
-│ ├── index.ts
-│ └── modules
-│ ├── Food.ts
-│ ├── GameControl.ts
-│ ├── ScorePanel.ts
-│ └── Snake.ts
 ├── README.md
+├── src
+│   ├── index.html
+│   ├── index.scss
+│   ├── index.ts
+│   └── modules
+│       ├── Food.ts
+│       ├── GameControl.ts
+│       ├── ScorePanel.ts
+│       └── Snake.ts
+├── tree.md
 ├── tsconfig.json
 └── webpack.config.js
 ```
@@ -37,4 +41,8 @@ npm install
 
 ```
 npm start
+```
+打包源码 
+```
+npm run build
 ```
