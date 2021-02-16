@@ -29,7 +29,6 @@ ts-snake
 ├── tsconfig.json
 └── webpack.config.js
 ```
-
 ## 运行源码
 
 ```
