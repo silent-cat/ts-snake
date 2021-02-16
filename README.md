@@ -42,7 +42,7 @@ npm install
 ```
 npm start
 ```
-打包源码 
+## 打包源码 
 ```
 npm run build
 ```
