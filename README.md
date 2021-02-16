@@ -12,6 +12,7 @@
 
 ## 项目结构
 
+```
 ts-snake
 ├── package-lock.json
 ├── package.json
@@ -27,6 +28,7 @@ ts-snake
 ├── README.md
 ├── tsconfig.json
 └── webpack.config.js
+```
 
 ## 运行源码
 
